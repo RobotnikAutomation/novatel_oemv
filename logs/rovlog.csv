@@ -1,0 +1,1 @@
+seconds,sequence,p_sol_status,pos_type,x,y,z,std(x),std(y),std(z),v_sol_status,vel_type,vx,vy,vz,std(vx),std(vy),std(vz),stnID,v_latency,diff_age,bestxyza.sol_age,SVs,solnSVs
