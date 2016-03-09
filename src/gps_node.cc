@@ -285,7 +285,7 @@ public:
 
   bool spin()
   {
-    ros::Rate r(10.0);
+    ros::Rate r(5.0);  // this should be set according to ONTIME params of the gps
   
     while (!ros::isShuttingDown()) // Using ros::isShuttingDown to avoid restarting the node during a shutdown.
     {
