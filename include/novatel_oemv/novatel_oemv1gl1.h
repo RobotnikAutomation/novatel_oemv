@@ -45,7 +45,7 @@ using std::ofstream;
 #define RUNNING							         3
 #define NOVATEL_OEMV1GL1_DEFAULT_DATA_SIZE		    8
 #define NOVATEL_OEMV1GL1_DEFAULT_PORT				"/dev/ttyUSB0"
-#define NOVATEL_OEMV1GL1_DEFAULT_TRANSFERRATE	 	    9600  //19200
+#define NOVATEL_OEMV1GL1_DEFAULT_TRANSFERRATE	 	    9600  
 #define NOVATEL_OEMV1GL1_DEFAULT_PARITY 			"none" 	//"even" "odd""none"
 
 #define NOVATEL_CRC32_POLYNOMIAL    0xEDB88320L
@@ -384,7 +384,7 @@ public:
 	//! Public constructor
 	//novatel_oemv1gl1(const char *channel, int baud_rate, const char *parity, int datasize, double hz);
 	// novatel_oemv1gl1( double hz );
-	novatel_oemv1gl1( const char *device, double hz, string mode );
+	novatel_oemv1gl1( const char *device, int baudrate, double hz, string mode );
 	//! Public destructor
 	~novatel_oemv1gl1();
 	//!	calculates checksum of received frame

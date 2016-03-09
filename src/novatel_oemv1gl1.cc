@@ -47,14 +47,14 @@ string *split(string line,int count){// Splitting a line string into substrings
 /*!	\fn novatel_oemv1gl1::novatel_oemv1gl1(const char *device, double hz)
  * 	\brief Public constructor
 */
-novatel_oemv1gl1::novatel_oemv1gl1( const char *device, double hz, string mode ) : Component( hz ) {
+novatel_oemv1gl1::novatel_oemv1gl1( const char *device, int baudrate, double hz, string mode ) : Component( hz ) {
 
     iErrorType = NOVATEL_OEMV1GL1_ERROR_NONE;
 
     sComponentName.assign("novatel_oemv1gl1");
 
     // Create serial port
-    serial = new SerialDevice(device, NOVATEL_OEMV1GL1_DEFAULT_TRANSFERRATE,
+    serial = new SerialDevice(device, baudrate,
 		NOVATEL_OEMV1GL1_DEFAULT_PARITY, NOVATEL_OEMV1GL1_DEFAULT_DATA_SIZE, 
 		NOVATEL_OEMV1GL1_DEFAULT_SERIAL_HZ ); //Creates serial device
 	

@@ -97,10 +97,13 @@ public:
 	desired_freq_(2), 
 	freq_diag_(diagnostic_updater::FrequencyStatusParam(&desired_freq_, &desired_freq_, 0.1))
   {
+    int baudrate;
     running = false;
     ros::NodeHandle gps_node_handle(node_handle_, "gps_node");
 
     private_node_handle_.param("port", port_, string("/dev/ttyUSB0"));
+
+    private_node_handle_.param("baudrate", baudrate, NOVATEL_OEMV1GL1_DEFAULT_TRANSFERRATE );
         
     private_node_handle_.param<string>("mode", gps_mode_, "GL1DE");  // NORMAL, EGNOS, PDPFILTER or GL1DE
 
@@ -128,7 +131,7 @@ public:
     diagnostic_.add( "Device Status", this, &gps_node::deviceStatus );
 
     // Create gps device
-    novatel = new novatel_oemv1gl1( port_.c_str(), NOVATEL_OEMV1GL1_THREAD_DESIRED_HZ, gps_mode_ );
+    novatel = new novatel_oemv1gl1( port_.c_str(), baudrate,  NOVATEL_OEMV1GL1_THREAD_DESIRED_HZ, gps_mode_ );
   }
 
   ~gps_node()
