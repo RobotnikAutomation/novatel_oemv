@@ -1021,6 +1021,16 @@ int novatel_oemv1gl1::ProcessFramePdpposa(char* str)
                 break;
         case 16:pdpposa.solnSVs=(unsigned char) atoi(pch); // Number of satellite vehicles used in solution
                 break;
+        case 17:
+        case 18:
+        case 19:
+                break;
+        case 20:pdpposa.ext_sol_stat = (unsigned char) atoi(pch); // (hex) extended solution status
+                break;
+        case 21:pdpposa.galileo_beidou_sig_mask = (unsigned char) atoi(pch); // (hex) extended solution status
+                break;
+        case 22:pdpposa.gps_glonass_sig_mask = (unsigned char) atoi(pch); // (hex) extended solution status
+                break;                
         default:break;
         }
 
