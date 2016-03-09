@@ -3,7 +3,7 @@
   <!-- start novate_oemv gps node -->
   <node pkg="novatel_oemv" type="gps_node" name="gps_node" output="screen">
     <!-- param name="port" value="/dev/ttyUSB_GPS" / -->
-    <param name="port" value="/dev/ttyUSB0" />
+    <param name="port" value="/dev/ttyUSB1" />
     <!-- NORMAL, EGNOS, PDPFILTER or GL1DE -->
     <param name="mode" value="GL1DE"/> 
   </node>

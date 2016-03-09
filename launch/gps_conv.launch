@@ -4,7 +4,7 @@
     <remap from="odom" to="utm_coords"/>
     <remap from="fix" to="/gps_node/nav_sat_fix" />  
     <param name="rot_covariance" value="99999" />
-    <param name="frame_id" value="base_footprint" />
+    <param name="frame_id" value="world" />
   </node>
 </launch>
 

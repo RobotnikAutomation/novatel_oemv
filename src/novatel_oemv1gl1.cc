@@ -419,10 +419,10 @@ int novatel_oemv1gl1::ProcessOEMV4Frame(char* str)
 
     // Before processing frame check CRC
     strcpy(aux, str);
-    ROS_INFO("aux = %s", aux );
+    //ROS_INFO("aux = %s", aux );
     msg = strtok_r( aux, "#*", &sptr );
     
-    ROS_INFO("msg = %s", msg );
+    //ROS_INFO("msg = %s", msg );
 
     do {
         if (bFirst) {
