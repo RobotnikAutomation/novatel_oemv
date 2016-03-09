@@ -277,7 +277,10 @@ typedef struct {
    float sol_age;       	// solution age in [s]
    unsigned char SVs;   	// number of satellite vehicles tracked
    unsigned char solnSVs;   // number of satellite vehicles used in solution
-   char reserved[6];    	// 
+   char reserved[3];    	// 
+   unsigned char ext_sol_stat;  // (hex) extended solution status
+   unsigned char galileo_beidou_sig_mask;  // (hex) signals used mask 0=unknown   
+   unsigned char gps_glonass_sig_mask;     // (hex) signals used mask 0=unknown   
    int32_t crc;         	// 32 bit crc
    bool bReceived;      	// true if one frame of this type has been received
 } pdpposa_t;

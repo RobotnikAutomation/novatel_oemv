@@ -425,8 +425,10 @@ public:
 	data.sol_age = pdpposa.sol_age;
 	data.SVs = pdpposa.SVs;
 	data.solnSVs = pdpposa.solnSVs;
+	data.ext_sol_stat = pdpposa.ext_sol_stat;
+    data.galileo_beidou_sig_mask = pdpposa.galileo_beidou_sig_mask;
+	data.gps_glonass_sig_mask = pdpposa.gps_glonass_sig_mask;
   }
-
 
   void deviceStatus(diagnostic_updater::DiagnosticStatusWrapper &status)
   {
