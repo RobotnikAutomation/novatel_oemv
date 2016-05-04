@@ -33,7 +33,6 @@ generate_messages(
 
 catkin_package(
   INCLUDE_DIRS include
-#  LIBRARIES summit_xl_robot_control
   CATKIN_DEPENDS 
     roscpp 
     roslib
@@ -43,7 +42,6 @@ catkin_package(
     geometry_msgs 
     sensor_msgs
     message_runtime 
-#  DEPENDS system_lib
 )
 
 # include_directories(include)
@@ -53,10 +51,10 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-
-
 ## Declare a cpp executable
 add_executable(gps_node src/gps_node.cc src/novatel_oemv1gl1.cc src/SerialDevice.cc src/Component.cc)
+
+add_dependencies(gps_node ${${PROJECT_NAME}_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(gps_node rt ${catkin_LIBRARIES} )
